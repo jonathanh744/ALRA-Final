@@ -75,7 +75,7 @@ library(FindIt)
     ## 
     ## arm (Version 1.13-1, built: 2022-8-25)
 
-    ## Working directory is C:/Users/jonat/OneDrive/Desktop/stats_hw/ALRA-Final
+    ## Working directory is C:/Users/jonat/OneDrive/Documents/stats_hw/ALRA-Final
 
 ``` r
 library(ggplot2)
@@ -210,10 +210,10 @@ rm(list = ls(all = TRUE))
 
 # Load Data ---------------------------------------------------------------
 #setwd("C:/Users/dylan/Dropbox/Paper - PTinIR")
-master <- read.dta13("C:\\Users\\jonat\\Downloads\\dataverse_fileswe\\ptinir_pooled.dta")
+master <- read.dta13("./ptinir_pooled.dta")
 ```
 
-    ## Warning in read.dta13("C:\\Users\\jonat\\Downloads\\dataverse_fileswe\\ptinir_pooled.dta"): 
+    ## Warning in read.dta13("./ptinir_pooled.dta"): 
     ##    Factor codes of type double or float detected in variables
     ## 
     ##    treat_c, treat_t, c_pid, c_pid_long, c_dem,
@@ -763,34 +763,34 @@ for(i in seq_len(k)){
 max(folds_RMSE)
 ```
 
-    ## [1] 1.348979
+    ## [1] 1.387669
 
 ``` r
 #Average RMSE
 mean(folds_RMSE)
 ```
 
-    ## [1] 1.267279
+    ## [1] 1.266007
 
 ``` r
 #Average Coefficient
 mean(folds_coeffs)
 ```
 
-    ## [1] 0.08220108
+    ## [1] 0.08223138
 
 ``` r
 #Stability of Coefficients over Folds
 sd(folds_coeffs)
 ```
 
-    ## [1] 0.01420246
+    ## [1] 0.01151244
 
 ``` r
 mean(folds_p/2)
 ```
 
-    ## [1] 0.04831662
+    ## [1] 0.04554724
 
 ``` r
 print("Mean RMSE over all folds:")
@@ -803,7 +803,7 @@ print("Mean RMSE over all folds:")
 mean(folds_RMSE)
 ```
 
-    ## [1] 1.267279
+    ## [1] 1.266007
 
 ``` r
 print("Average B1 over all folds:")
@@ -816,7 +816,7 @@ print("Average B1 over all folds:")
 mean(folds_coeffs)
 ```
 
-    ## [1] 0.08220108
+    ## [1] 0.08223138
 
 ``` r
 print("Sd of B1 over all folds:")
@@ -829,7 +829,7 @@ print("Sd of B1 over all folds:")
 sd(folds_coeffs)
 ```
 
-    ## [1] 0.01420246
+    ## [1] 0.01151244
 
 ``` r
 print("P-value range over all folds:")
@@ -842,7 +842,7 @@ quantile(folds_p/2)
 ```
 
     ##         0%        25%        50%        75%       100% 
-    ## 0.01811750 0.02327460 0.03607353 0.05623029 0.11966899
+    ## 0.02058372 0.02568194 0.04909598 0.06765774 0.07711619
 
 ``` r
 print("Mean P-value over all folds:")
@@ -854,7 +854,7 @@ print("Mean P-value over all folds:")
 mean(folds_p/2)
 ```
 
-    ## [1] 0.04831662
+    ## [1] 0.04554724
 
 Evaluating the model using 15-fold cross validation, I get an average
 rmse (root-mean-square error) of about 1.267, meaning that on average
