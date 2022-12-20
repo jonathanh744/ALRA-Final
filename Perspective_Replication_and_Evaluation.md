@@ -763,34 +763,34 @@ for(i in seq_len(k)){
 max(folds_RMSE)
 ```
 
-    ## [1] 1.387669
+    ## [1] 1.321703
 
 ``` r
 #Average RMSE
 mean(folds_RMSE)
 ```
 
-    ## [1] 1.266007
+    ## [1] 1.266687
 
 ``` r
 #Average Coefficient
 mean(folds_coeffs)
 ```
 
-    ## [1] 0.08223138
+    ## [1] 0.08221503
 
 ``` r
 #Stability of Coefficients over Folds
 sd(folds_coeffs)
 ```
 
-    ## [1] 0.01151244
+    ## [1] 0.01361352
 
 ``` r
 mean(folds_p/2)
 ```
 
-    ## [1] 0.04554724
+    ## [1] 0.04657922
 
 ``` r
 print("Mean RMSE over all folds:")
@@ -803,7 +803,7 @@ print("Mean RMSE over all folds:")
 mean(folds_RMSE)
 ```
 
-    ## [1] 1.266007
+    ## [1] 1.266687
 
 ``` r
 print("Average B1 over all folds:")
@@ -816,7 +816,7 @@ print("Average B1 over all folds:")
 mean(folds_coeffs)
 ```
 
-    ## [1] 0.08223138
+    ## [1] 0.08221503
 
 ``` r
 print("Sd of B1 over all folds:")
@@ -829,7 +829,7 @@ print("Sd of B1 over all folds:")
 sd(folds_coeffs)
 ```
 
-    ## [1] 0.01151244
+    ## [1] 0.01361352
 
 ``` r
 print("P-value range over all folds:")
@@ -841,8 +841,8 @@ print("P-value range over all folds:")
 quantile(folds_p/2)
 ```
 
-    ##         0%        25%        50%        75%       100% 
-    ## 0.02058372 0.02568194 0.04909598 0.06765774 0.07711619
+    ##          0%         25%         50%         75%        100% 
+    ## 0.006009822 0.035582354 0.042461936 0.059685600 0.090852343
 
 ``` r
 print("Mean P-value over all folds:")
@@ -854,7 +854,7 @@ print("Mean P-value over all folds:")
 mean(folds_p/2)
 ```
 
-    ## [1] 0.04554724
+    ## [1] 0.04657922
 
 Evaluating the model using 15-fold cross validation, I get an average
 rmse (root-mean-square error) of about 1.267, meaning that on average
