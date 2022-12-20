@@ -263,10 +263,10 @@ master$age <- as.factor(master$c_age)
 
 ``` r
 ggplot(data = master) +
-   geom_bar(mapping = aes(x = c_male),fill="#cb5c64")+labs( title="Distribution of Age",x = "Age")
+   geom_bar(mapping = aes(x = c_age),fill="#cb5c64")+labs( title="Distribution of Age",x = "Age")
 ```
 
-    ## Warning: Removed 603 rows containing non-finite values (`stat_count()`).
+    ## Warning: Removed 2 rows containing non-finite values (`stat_count()`).
 
 ![](Perspective_Replication_and_Evaluation_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
@@ -763,34 +763,34 @@ for(i in seq_len(k)){
 max(folds_RMSE)
 ```
 
-    ## [1] 1.321703
+    ## [1] 1.373057
 
 ``` r
 #Average RMSE
 mean(folds_RMSE)
 ```
 
-    ## [1] 1.266687
+    ## [1] 1.266258
 
 ``` r
 #Average Coefficient
 mean(folds_coeffs)
 ```
 
-    ## [1] 0.08221503
+    ## [1] 0.08221059
 
 ``` r
 #Stability of Coefficients over Folds
 sd(folds_coeffs)
 ```
 
-    ## [1] 0.01361352
+    ## [1] 0.0138654
 
 ``` r
 mean(folds_p/2)
 ```
 
-    ## [1] 0.04657922
+    ## [1] 0.04755471
 
 ``` r
 print("Mean RMSE over all folds:")
@@ -803,7 +803,7 @@ print("Mean RMSE over all folds:")
 mean(folds_RMSE)
 ```
 
-    ## [1] 1.266687
+    ## [1] 1.266258
 
 ``` r
 print("Average B1 over all folds:")
@@ -816,7 +816,7 @@ print("Average B1 over all folds:")
 mean(folds_coeffs)
 ```
 
-    ## [1] 0.08221503
+    ## [1] 0.08221059
 
 ``` r
 print("Sd of B1 over all folds:")
@@ -829,7 +829,7 @@ print("Sd of B1 over all folds:")
 sd(folds_coeffs)
 ```
 
-    ## [1] 0.01361352
+    ## [1] 0.0138654
 
 ``` r
 print("P-value range over all folds:")
@@ -841,8 +841,8 @@ print("P-value range over all folds:")
 quantile(folds_p/2)
 ```
 
-    ##          0%         25%         50%         75%        100% 
-    ## 0.006009822 0.035582354 0.042461936 0.059685600 0.090852343
+    ##         0%        25%        50%        75%       100% 
+    ## 0.01467423 0.02673831 0.04065176 0.07044453 0.09453683
 
 ``` r
 print("Mean P-value over all folds:")
@@ -854,7 +854,7 @@ print("Mean P-value over all folds:")
 mean(folds_p/2)
 ```
 
-    ## [1] 0.04657922
+    ## [1] 0.04755471
 
 Evaluating the model using 15-fold cross validation, I get an average
 rmse (root-mean-square error) of about 1.267, meaning that on average
